@@ -1,5 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react'
+import SearchBox from './components/search/SearchBox';
 
 function App() {
   const [monsters, setMonsters] = useState([]);
@@ -15,8 +16,8 @@ function App() {
 
   // SEARCH CONVERT LOWER CASE AREA
   const onSearchChange = (e) => {
-    const searchFieldString = e.target.value.toLowerCase();
-    setSearchField(searchFieldString);
+    const searchFieldString = e.target.value.toLowerCase()
+    setSearchField(searchFieldString)
   }
 
   // MONSTER NAME CONVERT TO LOWER CASE AREA
@@ -30,6 +31,7 @@ function App() {
   return (
     <>
       <h1 className="app-title ">Monster Roledex</h1>
+      <SearchBox onSearchChange={onSearchChange}/>
     </>
   );
 }
