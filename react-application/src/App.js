@@ -1,6 +1,8 @@
 import './App.css';
 import { useState, useEffect } from 'react'
 import SearchBox from './components/search/SearchBox';
+import CardList from './components/cardList/cardList';
+
 
 function App() {
   const [monsters, setMonsters] = useState([]);
@@ -31,7 +33,8 @@ function App() {
   return (
     <>
       <h1 className="app-title ">Monster Roledex</h1>
-      <SearchBox onSearchChange={onSearchChange}/>
+      <SearchBox onSearchChange={onSearchChange} />
+      <CardList monsters={filteredMonster} />
     </>
   );
 }
